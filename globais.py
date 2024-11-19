@@ -1,4 +1,4 @@
-resultado = 0
+g_resultado = 0
 
 def Soma(x,y):
     global resultado
