@@ -16,11 +16,11 @@ def Numero_primos(numero) -> bool:
         return(primo)
     
 
-def main():
-    numero = int(input("insira o seu numero:"))
-    Numero_primos(numero)
-    resultado = Numero_primos(numero)
-    print(resultado)
+#def main():
+    #numero = int(input("insira o seu numero:"))
+    #Numero_primos(numero)
+    #resultado = Numero_primos(numero)
+    #print(resultado)
 
-if __name__=="__main__":
-    main()
+#if __name__=="__main__":
+    #main()

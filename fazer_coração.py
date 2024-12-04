@@ -56,7 +56,7 @@ t.pensize(10)
 
 t.hideturtle()
 
-t.color('pink2')
+"""t.color('red2')
 
 t.down()
 
@@ -79,5 +79,5 @@ for i in range(20):
         a = randint(2,20)
 
         points(x,y,a)
-
+"""
 t.exitonclick()
