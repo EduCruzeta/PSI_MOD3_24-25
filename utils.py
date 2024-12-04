@@ -16,9 +16,13 @@ def ler_numero_inteiro(mensagem="Introduza um valor inteiro: ") -> int:
             return int(dados)
         print("Erro: o valor inserido não é valido")
 
-def ler_numero_inteiro_entre(valor_min,valor_max = None, mesagem="introduza um valor inteiro: ")-> int :
+def ler_numero_inteiro_limites(valor_min,valor_max = None,mensagem="introduza um valor inteiro: ")-> int :
+    """
+    Função que lê do utilizador um nº inteiro entre dois numeros dados pelo utilizador
+    A função garante que o valor inserido é um valor válido
+    """
     while True: 
-        numero = ler_numero_inteiro()
+        numero = ler_numero_inteiro(mensagem)
         if numero >= valor_min and (valor_max is None or numero <= valor_max):
             return numero
         else:
@@ -60,6 +64,10 @@ def ler_numero_decimal(mensagem="introduza um valor decimal: ") -> float:
         print("Erro: o valor inserido não é valido")
 
 def ler_numeros_decimais_entre(valor_min,valor_max = None,mensagem = "Introduza um valor decimal"):
+    """
+    Função para ler um nº decimal entre dois numeros dados pelo utilizador
+    A função garante que o valor é válido e aceita como separador das casas decimais . ou ,
+    """
     while True:
         numero = ler_numero_decimal()
         if numero >= valor_min and (valor_max is None or numero <= valor_max):
