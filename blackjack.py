@@ -1,5 +1,6 @@
 import random 
 
+pontuacao_jogador = 0
 categorias_cartas = ['Copas', 'Ouros', 'Paus', 'Espadas'] 
 cartas_lista = ['Ás', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Valete', 'Dama', 'Rei'] 
 baralho = [(carta, categoria) for categoria in categorias_cartas for carta in cartas_lista] 
@@ -23,6 +24,11 @@ cartas_dealer = [baralho.pop(), baralho.pop()]
 while True: 
     pontuacao_jogador = sum(valor_carta(carta) for carta in cartas_jogador) 
     pontuacao_dealer = sum(valor_carta(carta) for carta in cartas_dealer) 
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+    if pontuacao_jogador > 21:
+        print("jogador rebentou.")
+        break
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
     print("Cartas do Jogador:", cartas_jogador) 
     print("Pontuação do Jogador:", pontuacao_jogador) 
     print("\n") 
