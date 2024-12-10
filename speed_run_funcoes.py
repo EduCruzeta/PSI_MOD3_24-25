@@ -25,11 +25,10 @@ def calcular_fatorial(numero):
     """Recebe um número inteiro positivo e retorna o seu fatorial.
 	    Fatorial de 5 (5!) = 5 * 4 * 3 * 2 * 1
 	"""
-    anterior = 1
+    fatorial = 1
     for i in range(1,numero+1):
-        anterior = numero - 1
-        fatorial = i * anterior
-        return fatorial
+        fatorial = fatorial * i
+    return fatorial
         
 def converter_celsius_para_fahrenheit(celsius):
     """
@@ -56,8 +55,6 @@ def exibir_contagem_regressiva(inicio):
     for i in range(inicio,-1,-1):
         time.sleep(1)
         print (i)
-        if i == 0:
-            break
     
 def inverter_string(texto):
     """
@@ -72,8 +69,8 @@ def inverter_string(texto):
 
 def verificar_divisibilidade(a, b):
     """Recebe dois números e imprime se o primeiro é divisível pelo segundo."""
-    x = a % b
-    if a > 0:
+    resto = a % b
+    if resto > 0:
         print("É divisivel")
     else:
         print("Não é divisivel")
@@ -86,7 +83,8 @@ def calcular_perimetro_circulo(raio):
 def converter_segundos_para_minutos(segundos):
     """Recebe um valor em segundos e retorna o correspondente em minutos."""
     minutos = segundos //  60
-    return minutos
+    segundos_rest = segundos % 60
+    return f"{minutos}:{segundos_rest}"
     
 def gerar_saudacao_periodo():
     """
@@ -98,11 +96,11 @@ def gerar_saudacao_periodo():
     hora_atual = datetime.now().strftime("%H")
     
     if hora_atual < "12":
-        print("bom dia!")
+        return ("bom dia!")
     elif hora_atual > "12" and hora_atual < "18":
-        print("boa tarde!")
+        return ("boa tarde!")
     elif hora_atual > "18":
-        print("boa noite!")
+        return ("boa noite!")
 	
 def calcular_desconto(preco, percentual):
     """Recebe um preço e um percentual de desconto e retorna o preço com desconto."""
